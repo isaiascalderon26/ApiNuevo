@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
   selector: 'app-personas',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonasComponent implements OnInit {
 
-  constructor() { }
+  constructor(personaservice: PersonaService) { 
+     console.log(
+      personaservice.emailValidacion('isaiasa.calderon@gmail.com').subscribe((data) => {
+        console.log(data);
+
+      })
+      ); 
+  }
 
   ngOnInit(): void {
   }
